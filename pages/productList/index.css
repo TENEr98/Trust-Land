@@ -1,0 +1,145 @@
+@import "../index.css";
+body {
+  margin: 0;
+}
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 1280px;
+}
+.wrap-retailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1.5rem;
+}
+.retailer {
+  color: white;
+  font-size: 3rem;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  letter-spacing: 0.225rem;
+  line-height: 80px;
+}
+.image-wrapper-logo {
+  width: 100%;
+  padding-bottom: 61%;
+  position: relative;
+  overflow: hidden;
+}
+.logo-img {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+.categories > .category {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-name {
+  color: white;
+  font-size: xx-large;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+.items-block {
+  margin-top: 1.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.name:hover {
+  cursor: pointer;
+}
+.name {
+  color: bisque;
+  font-size: x-large;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.image-wrapper-shoe {
+  width: 100%;
+  padding-bottom: 61%;
+  position: relative;
+  overflow: hidden;
+}
+.image-wrapper-jacket {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-wrapper-tshirt {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.img-cursed {
+  position: absolute;
+  height: auto;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.img-jacket-cursed {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.img {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.price {
+  margin: 1.225rem 0;
+  font-size: 1.725rem;
+  color: rgb(63, 236, 184);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+.add {
+  width: 100%;
+}
+.btn-add {
+  width: 100%;
+  height: 2.225rem;
+  border: none;
+  background-color: rgb(52, 127, 161);
+  outline: none !important;
+  border-radius: 1.125rem;
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+  text-transform: uppercase;
+  font-family: "Montserrat", serif;
+}
+.btn-add:hover {
+  cursor: pointer;
+}

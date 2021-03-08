@@ -1,0 +1,107 @@
+@import "../index.css";
+body {
+  margin: 0;
+}
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 9rem);
+  margin: auto;
+}
+
+.basket {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 2.5rem 0;
+}
+.item {
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.name:hover {
+  cursor: pointer;
+}
+.name {
+  color: bisque;
+  font-size: x-large;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.image-wrapper-shoe {
+  width: 100%;
+  padding-bottom: 61%;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-cursed {
+  position: absolute;
+  height: auto;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.img {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.price {
+  margin: 1.225rem 0;
+  font-size: 1.725rem;
+  color: rgb(63, 236, 184);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+.item-price {
+  width: 12rem;
+}
+.wrapper-price-changer {
+  width: 100%;
+}
+
+.input-text {
+  width: 3rem;
+}
+.total-price {
+  width: 16rem;
+}
+.total {
+  color: white;
+  font-size: xx-large;
+  font-family: "Montserrat", serif;
+  border-bottom: 1px solid #cac0c0;
+}
+.result {
+  margin: 1.225rem 0;
+  font-size: 1.725rem;
+  color: rgb(63, 236, 184);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+.wrapper-checkout {
+  width: 15rem;
+  height: 1.825rem;
+}
+.checkout {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1.125rem;
+  font-size: larger;
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+}

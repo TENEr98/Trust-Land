@@ -1,0 +1,29 @@
+:root {
+  --bgDark: rgba(23, 24, 34, 1);
+  --txtWhite: rgba(255, 255, 255, 1);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat-Black.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-BlackItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Bold.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-BoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-ExtraBoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-ExtraLight.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-ExtraLightItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Italic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Light.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-LightItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Medium.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-MediumItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Regular.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-SemiBold.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-SemiBoldItalic.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-Thin.ttf") format("ttf"),
+    url("/assets/fonts/Montserrat-ThinItalic.ttf") format("ttf");
+}
+
+* {
+  margin: 0;
+}
