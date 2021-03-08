@@ -1,0 +1,130 @@
+@import "../index.css";
+body {
+  margin: 0;
+}
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 9rem);
+  margin: auto;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.225rem 0;
+}
+
+.form,
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  row-gap: 1.5rem;
+}
+
+.formField > label {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.425rem;
+}
+.formField > input {
+  background-color: #393f44;
+  border: 1px solid rgb(155, 164, 190);
+  padding: 0.625rem 0.825rem;
+  font-size: 1.125rem;
+  color: var(--txtWhite);
+  border-radius: 0.625rem;
+  outline: none;
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.formLabel > label {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.425rem;
+}
+
+.formRadio {
+  margin-top: 0.825rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.formRadio > div > label {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.925rem;
+}
+
+.form_submit {
+  width: 100%;
+}
+
+.submit {
+  text-transform: uppercase;
+  width: 100%;
+  color: #fff;
+  background-color: rgb(82, 124, 179);
+  padding: 0.8125rem;
+  font-size: large;
+  font-family: "Montserrat";
+  font-weight: 700;
+  border-radius: 0.8125rem;
+  outline: none;
+  border: 1px solid rgba(46, 109, 138, 0.678);
+  cursor: pointer;
+}
+.item {
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.title:hover {
+  cursor: pointer;
+}
+.title {
+  color: bisque;
+  font-size: x-large;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.product-img {
+  width: 100%;
+  padding-bottom: 61%;
+  position: relative;
+  overflow: hidden;
+}
+
+.img {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.price {
+  margin: 1.225rem 0;
+  font-size: 1.725rem;
+  color: rgb(63, 236, 184);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}

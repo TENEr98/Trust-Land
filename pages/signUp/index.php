@@ -8,11 +8,11 @@ include '../../UI/header.php';
     <form action="" method="post" class="form">
       <div class="form_field">
         <label for="username" class="legend">Username</label>
-        <input type="username" class="field" name="username" />
+        <input type="username" class="field" name="username" required/>
       </div>
       <div class="form_field">
         <label for="password" class="legend">Password</label>
-        <input type="password" class="field" name="password">
+        <input type="password" class="field" name="password" required>
       </div>
       <div class="form_submit">
         <button type="submit" class="submit">Sign Up</button>

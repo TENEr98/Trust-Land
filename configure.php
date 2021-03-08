@@ -3,8 +3,12 @@
 function checkerForm($username, $password)
 {
   if ($username == 'demo' && $password == 'demo') {
-    echo "<script>alert('Success')</script>";
-    echo "<script>window.location.href = '/e-commerce/pages/productList'</script>";
+    echo "<script>
+      console.log({'username':'demo', password:'demo'});
+      localStorage.setItem('user', JSON.stringify({'username':'demo', 'password':'demo'}));
+      alert('Success');
+      window.location.href = '/e-commerce/pages/productList'
+    </script>";
     return true;
   }
   echo "<script>alert('Fail')</script>";

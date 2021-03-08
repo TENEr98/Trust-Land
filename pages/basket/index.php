@@ -15,9 +15,9 @@ include '../../UI/header.php';
       </div>
       <div class="item-price">
         <div class="wrapper-price-changer">
-          <input type="button" value="-" id="minus" onclick="minus()">
+          <input type="button" value="-" id="minus" onclick="minus()" class="change">
           <input type="text" size="25" value="1" id="count" class="input-text">
-          <input type="button" value="+" id="plus" onclick="plus()">
+          <input type="button" value="+" id="plus" onclick="plus()" class="change">
         </div>
         <div id="notice" style="color:red;"></div>
         <p class="price" id="price">$76.50</p>
@@ -29,7 +29,7 @@ include '../../UI/header.php';
       <h4 class="result" id="result"></h4>
     </div>
     <div class="wrapper-checkout">
-      <button class="checkout">Proceed to Checkout</button>
+      <button class="checkout" onclick="location.href='/e-commerce/pages/checkout';">Proceed to Checkout</button>
     </div>
   </div>
   <?php

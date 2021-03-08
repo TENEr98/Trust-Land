@@ -1,0 +1,50 @@
+@import "../index.css";
+
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 9rem);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  color: #88b04b;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.text {
+  color: #404f5e;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+.checkmark {
+  display: flex;
+  justify-content: center;
+}
+i {
+  color: #9abc66;
+  font-size: 100px;
+  line-height: 200px;
+  margin-left: -15px;
+}
+
+.card {
+  background: white;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #c8d0d8;
+  display: inline-block;
+  margin: 0 auto;
+}

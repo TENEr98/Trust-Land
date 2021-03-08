@@ -69,11 +69,39 @@
       <a class="logo" href="/e-commerce">TRUST-LAND</a>
     </div>
     <div class="block_shop">
-      <a class="products" href="/e-commerce/pages/productList">Our Products</a>
-      <a class="products" href="/e-commerce/pages/signIn">Sign In</a>
-      <a class="products" href="/e-commerce/pages/signUp">Sign Up</a>
+      <a class="products" href="/e-commerce/pages/productList" id="product">Our Products</a>
+      <a class="products" href="/e-commerce/pages/signIn" id="auth">Sign In</a>
+      <a class="products" href="/e-commerce/pages/signUp" id="auth">Sign Up</a>
       <a href="/e-commerce/pages/basket"><img src="/e-commerce/assets/icons/cart.svg" alt="cart" class="cart" />
       </a>
     </div>
   </div>
 </div>
+
+<script>
+'use strict';
+var auth = document.querySelectorAll("#auth");
+var {username} = JSON.parse(localStorage.getItem('user'));
+var demo = document.createElement('A');
+var signOut = document.createElement('A');
+var sibling = document.querySelector('#product');
+var parentDiv = sibling.parentNode;
+if(localStorage.getItem('user')){
+  Array.from(auth).forEach(item => item.style.display = 'none')
+  demo.appendChild(document.createTextNode(username))
+  signOut.appendChild(document.createTextNode('Sign Out'))
+  demo.classList.add('products')
+  signOut.classList.add('products')
+  parentDiv.insertBefore(demo, sibling.nextSibling)
+  parentDiv.insertBefore(signOut, demo.nextSibling)
+
+  signOut.addEventListener('click', logOut)
+}
+
+function logOut(){
+  localStorage.removeItem('user');
+  Array.from(auth).forEach(item => item.style.display = 'block')
+  demo.style.display = 'none'
+  signOut.style.display = 'none'
+}
+</script>

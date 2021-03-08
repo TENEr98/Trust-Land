@@ -71,10 +71,25 @@ body {
 }
 .wrapper-price-changer {
   width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 0.825rem;
+}
+
+.change {
+  width: 2.5rem;
+  background-color: #61a4db;
+  outline: none !important;
+  font-family: "Montserrat";
+  font-size: 1.125rem;
+  height: 2rem;
 }
 
 .input-text {
   width: 3rem;
+  height: 2rem;
+  padding: auto;
+  text-align: center;
 }
 .total-price {
   width: 16rem;
@@ -104,4 +119,12 @@ body {
   font-size: larger;
   font-family: "Montserrat", serif;
   font-weight: 700;
+  outline: none !important;
+  background-color: #61a4db;
+  box-shadow: 0 0 6px rgb(200, 198, 198);
+}
+.checkout:hover {
+  cursor: pointer;
+  background-color: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+    center/15000%;
 }
