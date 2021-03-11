@@ -22,7 +22,7 @@ include '../../UI/header.php';
             </div>
             <p class="price">$76.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
@@ -32,7 +32,7 @@ include '../../UI/header.php';
             </div>
             <p class="price">$90.99</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
@@ -42,7 +42,7 @@ include '../../UI/header.php';
             </div>
             <p class="price">$55.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
         </div>
@@ -57,27 +57,30 @@ include '../../UI/header.php';
             </div>
             <p class="price">$176.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
             <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">NIKE COAT</h5>
             <div class="image-wrapper-jacket">
-              <img src="../../assets/img/products/jacket/NIKE-FC-BARCELONA-STRIKE-SDF-BN-CL-2020-2021-COAT.png" alt="jacket" class="img">
+              <img src="../../assets/img/products/jacket/NIKE-FC-BARCELONA-STRIKE-SDF-BN-CL-2020-2021-COAT.png"
+                alt="jacket" class="img">
             </div>
             <p class="price">$590.99</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
             <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">Nike Sportswear Windrunner</h5>
             <div class="image-wrapper-jacket">
-              <img src="../../assets/img/products/jacket/Nike_Sportswear_Windrunner_Down_Fill_Men_s_Hooded_Puffer_Parka.png" alt="jacket" class="img">
+              <img
+                src="../../assets/img/products/jacket/Nike_Sportswear_Windrunner_Down_Fill_Men_s_Hooded_Puffer_Parka.png"
+                alt="jacket" class="img">
             </div>
             <p class="price">$396.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
         </div>
@@ -92,7 +95,7 @@ include '../../UI/header.php';
             </div>
             <p class="price">$76.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
@@ -102,17 +105,18 @@ include '../../UI/header.php';
             </div>
             <p class="price">$90.99</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
           <div class="item">
             <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">Nike Court</h5>
             <div class="image-wrapper-tshirt">
-              <img src="../../assets/img/products/tshirt/NikeCourt_Boys_Dri-FIT_GFX_Shortsleeve.png" alt="T-Shirt" class="img">
+              <img src="../../assets/img/products/tshirt/NikeCourt_Boys_Dri-FIT_GFX_Shortsleeve.png" alt="T-Shirt"
+                class="img">
             </div>
             <p class="price">$55.50</p>
             <div class="add">
-              <button class="btn-add">Buy</button>
+              <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>
           </div>
         </div>

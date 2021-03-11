@@ -12,13 +12,16 @@ include '../../UI/header.php';
       </div>
       <div class="desc">
         <div class="product-desc">
-          <p>The Nike Air Max React unit delivers unrivalled, all-day comfort. Nike React technology delivers an extremely smooth ride, reduces weight and adds flexibility. The no-sew, synthetic overlays on the upper provides a lightweight feel and flexible fit. The soft, padded collar with low-cut design feels comfortable.</p>
+          <p>The Nike Air Max React unit delivers unrivalled, all-day comfort. Nike React technology delivers an
+            extremely smooth ride, reduces weight and adds flexibility. The no-sew, synthetic overlays on the upper
+            provides a lightweight feel and flexible fit. The soft, padded collar with low-cut design feels comfortable.
+          </p>
         </div>
         <div class="product-price">
           <p>$55.50</p>
         </div>
         <div class="product-buy">
-          <button class="product-add">BUY</button>
+          <button class="product-add" onclick="location.href='/e-commerce/pages/basket';">BUY</button>
         </div>
       </div>
     </div>
