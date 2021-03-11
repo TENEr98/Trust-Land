@@ -12,7 +12,7 @@ body {
   margin: auto;
   max-width: 1280px;
   padding-top: 2.5rem;
-  height: 100vh;
+  height: calc(100vh - 11.5rem);
 }
 
 .product-details {
