@@ -1,24 +1,45 @@
 <?php
 
-function checkerForm($username, $password)
+
+include("application_top.php");
+  
+function checkerForm($username)
 {
-  if ($username == 'demo' && $password == 'demo') {
     echo "<script>
-      console.log({'username':'demo', password:'demo'});
-      localStorage.setItem('user', JSON.stringify({'username':'demo', 'password':'demo'}));
       alert('Success');
+      localStorage.setItem('user', '".$username."');
       window.location.href = '/e-commerce/pages/productList'
     </script>";
     return true;
-  }
-  echo "<script>alert('Fail')</script>";
-  return false;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  define('username', $_POST['username']);
-  define('password', $_POST['password']);
-  if (strlen(username) > 1 && strlen(password) > 1) {
-    $bool = checkerForm(username, password);
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+  //something was posted
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  if(!empty($username) && !empty($password) && !is_numeric($username))
+  {
+
+    //read from database
+    $query = "select * from users where username = '$username' limit 1";
+    $result = mysqli_query($con, $query);
+
+    if($result)
+    {
+      if($result && mysqli_num_rows($result) > 0)
+      {
+
+        $user_data = mysqli_fetch_assoc($result);
+        
+        if($user_data['password'] === $password)
+        {
+
+          $_SESSION['user_id'] = $user_data['user_id'];
+          checkerForm($user_data['username']);
+        }
+      }
+    }
   }
 }

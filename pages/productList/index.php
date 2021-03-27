@@ -2,6 +2,16 @@
 <link rel="stylesheet" href="index.css">
 <?php
 include '../../UI/header.php';
+
+session_start();
+
+include '../../application_top.php';
+include '../../utils/check_signedIn.php';
+include '../../utils/PDO_config.php';
+include '../../utils/getListProducts.php';
+
+$products = getProducts($con, $pdo);
+is_signedIn($con);
 ?>
 <div class="wrapper">
   <div class="container">
@@ -16,11 +26,13 @@ include '../../UI/header.php';
         <h1 class="category-name">Shoes</h1>
         <div class="items-block">
           <div class="item">
-            <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">Nike Air Max 2090</h5>
+            <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">
+              <?php echo htmlspecialchars($products['product_name'])?></h5>
             <div class="image-wrapper-shoe">
-              <img src="../../assets/img/products/shoe/Nike-Air-Max-2090.png" alt="shoes" class="img">
+              <img src="data:image/png;base64, <?php echo base64_encode($products['product_image'])?>" alt="shoes"
+                class="img">
             </div>
-            <p class="price">$76.50</p>
+            <p class="price">$<?php echo htmlspecialchars($products['price'])?></p>
             <div class="add">
               <button class="btn-add" onclick="location.href='/e-commerce/pages/productDetails';">Buy</button>
             </div>

@@ -1,9 +1,11 @@
 <script>
-    if (window.location.pathname === '/e-commerce/') {
-        location.assign('/e-commerce/pages/productList')
-    }else {
-        location.assign('/e-commerce/pages/productList')
-    }
+switch (window.location.pathname) {
+  case '/':
+  case '/e-commerce':
+  case '/e-commerce/':
+  default:
+    location.assign('/e-commerce/pages/productList')
+}
 </script>
 <?php
 switch ($_SERVER['SERVER_NAME']) {
