@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="index.css">
 <?php
 include '../../UI/header.php';
+session_start();
 ?>
 <div class="wrapper">
   <div class="container">

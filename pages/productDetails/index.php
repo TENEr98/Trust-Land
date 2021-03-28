@@ -2,51 +2,57 @@
 <link rel="stylesheet" href="index.css">
 <?php
 include '../../UI/header.php';
+session_start();
+include '../../application_top.php';
+
+
+$url = $_SERVER['REQUEST_URI'];
+$url_components = parse_url($url);
+parse_str($url_components['query'], $params);
+if (isset($params['product_id'])) {
+  $productId = $params['product_id'];
+  $query = "select * from products where product_id=$productId";
+  $result = $con->query($query);
+  $return  = [];
+  if ($result->num_rows == 1) {
+    while ($row = $result->fetch_assoc()) {
+      $return[] = [
+        'product_id' => $row['product_id'],
+        'product_name' => $row['product_name'],
+        'price' => $row['price'],
+        'product_image' => $row['product_image'],
+        'category' => $row['category']
+      ];
+    }
+  }
+}
+
 ?>
 <div class="wrapper">
   <div class="container">
-    <div class="product-details">
-      <div class="product-img">
-        <h3 class="title">Nike Air Max React</h3>
-        <img src="../../assets/img/products/shoe/Nike-Air-Max-270-React-SE.png" alt="shoe" class="img">
-      </div>
-      <div class="desc">
-        <div class="product-desc">
-          <p>The Nike Air Max React unit delivers unrivalled, all-day comfort. Nike React technology delivers an
-            extremely smooth ride, reduces weight and adds flexibility. The no-sew, synthetic overlays on the upper
-            provides a lightweight feel and flexible fit. The soft, padded collar with low-cut design feels comfortable.
-          </p>
+    <?php foreach ($return as $prod) : ?>
+      <div class="product-details">
+        <div class="product-img">
+          <h3 class="title"><?= $prod['product_name'] ?></h3>
+          <img src="../../assets/img/products/<?= $prod['category'] . '/' .  $prod['product_image'] ?>" alt="<?= $prod['product_name'] ?>" class="img">
         </div>
-        <div class="product-price">
-          <p>$55.50</p>
-        </div>
-        <div class="product-buy">
-          <button class="product-add" onclick="location.href='/e-commerce/pages/basket';">BUY</button>
-        </div>
-      </div>
-    </div>
-    <div class="recommendations">
-      <div class="item">
-        <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">Nike Air Max 2090</h5>
-        <div class="image-wrapper-shoe">
-          <img src="../../assets/img/products/shoe/Nike-Air-Max-2090.png" alt="shoes" class="img">
-        </div>
-        <p class="price">$76.50</p>
-        <div class="add">
-          <button class="btn-add">Buy</button>
+        <div class="desc">
+          <div class="product-desc">
+            <p>The Nike Air Max React unit delivers unrivalled, all-day comfort. Nike React technology delivers an
+              extremely smooth ride, reduces weight and adds flexibility. The no-sew, synthetic overlays on the upper
+              provides a lightweight feel and flexible fit. The soft, padded collar with low-cut design feels comfortable.
+            </p>
+          </div>
+          <div class="product-price">
+            <p>$<?= $prod['price'] ?></p>
+          </div>
+          <div class="product-buy">
+            <button class="product-add" type="submit" name="add">BUY</button>
+            <input type="hidden" aria-labelledby="buy" name="product_id" value="<?= $prod['product_id'] ?>">
+          </div>
         </div>
       </div>
-      <div class="item">
-        <h5 class="name" onclick="location.href='/e-commerce/pages/productDetails';">Nike Air Max 720</h5>
-        <div class="image-wrapper-shoe">
-          <img src="../../assets/img/products/shoe/nike-air-max-720-818.png" alt="shoes" class="img-cursed">
-        </div>
-        <p class="price">$90.99</p>
-        <div class="add">
-          <button class="btn-add">Buy</button>
-        </div>
-      </div>
-    </div>
+    <?php endforeach; ?>
   </div>
   <?php
   include '../../UI/footer.php';

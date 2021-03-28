@@ -3,6 +3,7 @@
 
 <?php
 include '../../UI/header.php';
+session_start();
 ?>
 
 <div class="wrapper">

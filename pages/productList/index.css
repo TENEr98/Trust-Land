@@ -68,6 +68,9 @@ body {
   flex-direction: column;
   justify-content: flex-end;
 }
+.name-link {
+  text-decoration: none;
+}
 .name:hover {
   cursor: pointer;
 }
