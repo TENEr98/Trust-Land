@@ -2,7 +2,7 @@
   .contacts {
     width: 100%;
     max-width: 1280px;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     height: 3.5rem;
     margin: auto;
     display: flex;

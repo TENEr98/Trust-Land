@@ -10,14 +10,14 @@ body {
 .container {
   width: 100%;
   max-width: 1280px;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 3rem);
   margin: auto;
 }
 
 .split {
   display: flex;
   justify-content: space-between;
-  padding: 1.225rem 0;
+  padding: 1.225rem 2rem;
 }
 
 .form,

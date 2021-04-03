@@ -13,6 +13,10 @@ if (isset($params['product_id'])) {
   $productId = $params['product_id'];
   $query = "select * from products where product_id=$productId";
   $result = $con->query($query);
+  var_dump($result);
+  if (!$result && mysqli_num_rows($result) == 0) {
+    echo "<script>alert('You are seeking for unknown product id');</script>";
+  }
   $return  = [];
   if ($result->num_rows == 1) {
     while ($row = $result->fetch_assoc()) {
