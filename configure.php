@@ -1,7 +1,12 @@
 <?php
-
-
 include("application_top.php");
+
+if (array_key_exists('user_id', $_SESSION)) {
+  echo "<script>
+  alert('You have Signed In');
+  window.location.href = '/e-commerce/pages/productList'
+</script>";
+}
 
 function checkerForm($username)
 {

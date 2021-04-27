@@ -1,0 +1,50 @@
+@import "../index.css";
+body {
+  margin: 0;
+}
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+.container {
+  width: 100%;
+  margin: auto;
+  max-width: 1280px;
+  height: calc(100vh - 9rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block-confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.confirmation {
+  letter-spacing: 0.1em;
+  color: white;
+}
+.action-block {
+  min-width: 11rem;
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  cursor: pointer;
+  width: 4.5rem;
+  height: 2.625rem;
+  font-size: 1.125rem;
+  background-color: rgb(43, 126, 182);
+  border-radius: 4px;
+}
+button:focus {
+  background-color: rgb(32, 97, 139);
+  outline-color: rgb(255, 255, 255);
+  outline-width: 1px;
+  outline-style: solid;
+}
+button:hover {
+  background-color: rgb(19, 145, 230);
+}

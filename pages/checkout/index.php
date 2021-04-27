@@ -3,7 +3,9 @@
 
 <?php
 include '../../UI/header.php';
-session_start();
+include '../../application_top.php';
+
+var_dump($param = json_decode($_REQUEST["param"]));
 ?>
 
 <div class="wrapper">

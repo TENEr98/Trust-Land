@@ -4,7 +4,7 @@
 <?php
 include '../../UI/header.php';
 
-session_start();
+
 include '../../application_top.php';
 include '../../utils/randomizer.php';
 

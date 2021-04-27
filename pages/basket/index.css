@@ -10,8 +10,9 @@ body {
 .container {
   width: 100%;
   max-width: 1280px;
-  height: calc(100vh - 9rem);
+  min-height: calc(100vh - 9rem);
   margin: auto;
+  padding: 0 2rem;
 }
 
 .basket {
@@ -35,26 +36,16 @@ body {
   font-size: x-large;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-.image-wrapper-shoe {
+.image-wrapper {
   width: 100%;
   padding-bottom: 61%;
   position: relative;
   overflow: hidden;
 }
-
-.img-cursed {
-  position: absolute;
-  height: auto;
-  top: 66%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
 .img {
   position: absolute;
   height: auto;
-  top: 50%;
+  top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -127,4 +118,29 @@ body {
   cursor: pointer;
   background-color: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
     center/15000%;
+}
+.delete {
+  background-color: rgb(221, 23, 23);
+  border-radius: 0.225rem;
+  height: 2.225rem;
+  width: 4.5rem;
+  color: rgb(248, 207, 207);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  height: 80%;
+}
+.no-products {
+  color: white;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1rem;
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 function getProducts($con, $category)
 {
   $sql = "SELECT * FROM products WHERE category='{$category}'";

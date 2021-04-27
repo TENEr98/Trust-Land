@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="./index.css" type="text/css">
 <?php
 include '../../UI/header.php';
-session_start();
 include '../../configure.php';
 ?>
 <div class="wrapper">
@@ -24,6 +23,6 @@ include '../../configure.php';
 
   </div>
   <?php
-    include '../../UI/footer.php';
-    ?>
+  include '../../UI/footer.php';
+  ?>
 </div>
