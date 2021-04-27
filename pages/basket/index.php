@@ -1,6 +1,8 @@
 <title>Basket</title>
 <link rel="stylesheet" href="index.css">
+
 <?php
+
 include '../../UI/header.php';
 include '../../application_top.php';
 include '../../utils/basket_products.php';
@@ -84,6 +86,8 @@ $productList = getProducts($con);
   include '../../UI/footer.php';
   ?>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 var countEl = document.querySelectorAll(".input-text");
 var result = document.getElementById('result');
@@ -118,7 +122,6 @@ function minus(el) {
 }
 
 
-
 function checkout(e) {
   const items = document.querySelectorAll('.basket')
   const products = []
@@ -130,6 +133,17 @@ function checkout(e) {
       quantity,
       product_id
     })
+  })
+  $.ajax({
+    method: "POST",
+    url: "proceed.php",
+    data: {
+      products
+    },
+    success: (response) => {
+      console.log(response)
+      window.location.assign('/e-commerce/pages/checkout')
+    }
   })
   console.log(products)
   // window.location.assign(`/e-commerce/pages/checkout`)

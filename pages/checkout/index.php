@@ -4,14 +4,12 @@
 <?php
 include '../../UI/header.php';
 include '../../application_top.php';
-
-var_dump($param = json_decode($_REQUEST["param"]));
 ?>
 
 <div class="wrapper">
   <div class="container">
     <div class="split">
-      <form class="form">
+      <form class="form" id="form">
         <div class="formField">
           <label for="reciever">Reciever</label>
           <input type="text" required>
@@ -56,23 +54,28 @@ var_dump($param = json_decode($_REQUEST["param"]));
           </div>
         </div>
         <div class="form_submit">
-          <button class="submit" onclick="location.href='/e-commerce/pages/success';">Submit</button>
+          <button class="submit">Submit</button>
         </div>
       </form>
-      <div class="item-basket">
-        <div class="item">
-          <div class="product-img">
-            <h3 class="title">Nike Air Max React</h3>
-            <img src="../../assets/img/products/shoe/Nike-Air-Max-270-React-SE.png" alt="shoe" class="img">
-          </div>
-          <div class="price">
-            <p>$55.50</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <?php
   include '../../UI/footer.php';
   ?>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+const form = $('#form')
+form.on('submit', function submit(e) {
+  e.preventDefault()
+  $.ajax({
+    url: "checkout.php",
+    success: (response) => {
+      console.log(response)
+      window.location.assign('/e-commerce/pages/success')
+    }
+  })
+})
+</script>
