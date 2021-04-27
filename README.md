@@ -2,4 +2,4 @@
 
 E-Commerce website for clothes
 
-#This project has done using pure PHP + vanilla JS + HTML + CSS
+#This project has done using pure PHP + MySQL + vanilla JS + HTML + CSS
