@@ -25,12 +25,8 @@ if (isset($url_components['query'])) {
     }
 
     $product_ids = $_SESSION['product_ids'];
-
-    if (empty($product_ids)) {
-      array_push($_SESSION['product_ids'], $params['id']);
-      $insertProduct = "insert into cart (user_id, product_id, quantity, checked_out) values ($user_id,$productId,1,0)";
-      $con->query($insertProduct);
-    } else if (in_array($productId, $product_ids)) {
+    $query = mysqli_query($con, "select * from cart where product_id=$productId and checked_out=0");
+    if (mysqli_num_rows($query) == 0) {
       array_push($_SESSION['product_ids'], $params['id']);
       $insertProduct = "insert into cart (user_id, product_id, quantity, checked_out) values ($user_id,$productId,1,0)";
       $con->query($insertProduct);
