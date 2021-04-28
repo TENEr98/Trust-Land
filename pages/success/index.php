@@ -3,7 +3,10 @@
 
 <?php
 include '../../UI/header.php';
-session_start();
+include '../../application_top.php';
+
+unset($_SESSION['product_ids']);
+
 ?>
 
 <div class="wrapper">
@@ -14,6 +17,7 @@ session_start();
       </div>
       <h1 class="success">Success</h1>
       <p class="text">We received your purchase request<br /> We'll be in touch shortly!</p>
+      <a href="/e-commerce/pages/productList/" class="anchor-home">Home</a>
     </div>
   </div>
   <?php

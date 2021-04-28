@@ -18,7 +18,7 @@ if (isset($url_components['query'])) {
   if (isset($params['id'])) {
     $productId = $params['id'];
     $user_id = $_SESSION['user_id'];
-    // unset($_SESSION['product_ids']);
+    unset($_SESSION['product_ids']);
 
     if (!array_key_exists('product_ids', $_SESSION)) {
       $_SESSION['product_ids'] = array();
@@ -30,7 +30,7 @@ if (isset($url_components['query'])) {
       array_push($_SESSION['product_ids'], $params['id']);
       $insertProduct = "insert into cart (user_id, product_id, quantity, checked_out) values ($user_id,$productId,1,0)";
       $con->query($insertProduct);
-    } else if (!in_array($productId, $product_ids)) {
+    } else if (in_array($productId, $product_ids)) {
       array_push($_SESSION['product_ids'], $params['id']);
       $insertProduct = "insert into cart (user_id, product_id, quantity, checked_out) values ($user_id,$productId,1,0)";
       $con->query($insertProduct);
@@ -145,7 +145,29 @@ function checkout(e) {
       window.location.assign('/e-commerce/pages/checkout')
     }
   })
-  console.log(products)
-  // window.location.assign(`/e-commerce/pages/checkout`)
+}
+
+function deleteItem(el) {
+  const item = el.closest('.basket')
+  const quantity = item.querySelector('.input-text')
+  const product = {
+    product_id: Number(item.id),
+    quantity: Number(quantity.value)
+  }
+  let url = new URL(location);
+  url.searchParams.delete('id')
+  history.replaceState(null, null, url)
+  let params = new URLSearchParams(url.search.slice(1));
+  $.ajax({
+    method: "POST",
+    url: "proceed.php",
+    data: {
+      product
+    },
+    success: (response) => {
+      console.log(response)
+      window.location.assign('/e-commerce/pages/basket')
+    }
+  })
 }
 </script>

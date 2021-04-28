@@ -48,3 +48,8 @@ i {
   display: inline-block;
   margin: 0 auto;
 }
+
+.anchor-home {
+  font-size: 24px;
+  font-family: "Montserrat";
+}
