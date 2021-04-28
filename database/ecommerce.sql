@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 29 2021 г., 18:00
+-- Время создания: Апр 28 2021 г., 10:29
 -- Версия сервера: 10.4.17-MariaDB
 -- Версия PHP: 7.3.26
 
@@ -20,6 +20,42 @@ SET time_zone = "+00:00";
 --
 -- База данных: `ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `product_id` bigint(20) NOT NULL,
+  `quantity` int(5) NOT NULL,
+  `checked_out` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `checked_out`) VALUES
+(1, 120796461, 29, 14, 1),
+(2, 120796461, 33, 3, 1),
+(4, 120796461, 30, 4, 1),
+(5, 120796461, 30, 4, 1),
+(6, 120796461, 29, 14, 1),
+(7, 120796461, 29, 14, 1),
+(8, 120796461, 32, 1, 1),
+(9, 120796461, 32, 1, 1),
+(10, 120796461, 32, 1, 1),
+(11, 120796461, 32, 1, 1),
+(12, 120796461, 32, 1, 1),
+(13, 120796461, 29, 14, 1),
+(14, 120796461, 30, 4, 1),
+(15, 120796461, 31, 4, 1),
+(16, 120796461, 29, 14, 1),
+(38, 120796461, 31, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -70,11 +106,20 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `user_id`, `username`, `email`, `password`) VALUES
 (1, 120796461, 'levon', 'levon@gmail.com', 'levon'),
-(2, 4431457944468159641, 'tener', 'tener@gmail.com', 'tener');
+(2, 4431457944468159641, 'tener', 'tener@gmail.com', 'tener'),
+(8, 478481417649863, 'tener', 'n@gmail.com', '123');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `product_id` (`product_id`);
 
 --
 -- Индексы таблицы `products`
@@ -95,6 +140,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
@@ -104,7 +155,18 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
