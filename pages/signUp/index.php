@@ -3,15 +3,13 @@
 
 <?php
 include '../../UI/header.php';
-
-
 include '../../application_top.php';
 include '../../utils/randomizer.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $username = $_POST['username'];
   $email = $_POST['email'];
-  $password = $_POST['password'];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   if (!empty($username) && !empty($password) && !empty($email) && !is_numeric($username)) {
     $check_email_exists = "select * from users where email = '$email' limit 1";

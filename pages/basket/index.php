@@ -18,7 +18,7 @@ if (isset($url_components['query'])) {
   if (isset($params['id'])) {
     $productId = $params['id'];
     $user_id = $_SESSION['user_id'];
-    unset($_SESSION['product_ids']);
+    // unset($_SESSION['product_ids']);
 
     if (!array_key_exists('product_ids', $_SESSION)) {
       $_SESSION['product_ids'] = array();
@@ -55,7 +55,7 @@ $productList = getProducts($con);
           <input type="text" size="25" value="<?= $product['quantity'] ?>" class="input-text">
           <input type="button" value="+" onclick="plus(this)" class="change">
         </div>
-        <div id="notice" style="color:red;"></div>
+        <div style="color:red;"></div>
         <p class="price fix-prices">$<?= $product['price'] ?></p>
         <button class="delete" onclick="deleteItem(this)">Delete</button>
       </div>

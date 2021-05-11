@@ -57,10 +57,15 @@ body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 .items-block {
+  width: 100%;
   margin-top: 1.125rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+}
+.item-block > .item {
+  flex: 1 1 33%;
 }
 .item {
   width: 18rem;

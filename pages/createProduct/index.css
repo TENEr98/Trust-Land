@@ -1,0 +1,87 @@
+@import "../index.css";
+body {
+  margin: 0;
+}
+.wrapper {
+  width: 100%;
+  background-color: var(--bgDark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 3rem);
+  margin: auto;
+}
+
+.form-creation {
+  padding: 2rem;
+  width: 25rem;
+  display: flex;
+  row-gap: 1.5rem;
+}
+
+.form-creation,
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.formField {
+  row-gap: 0.625rem;
+}
+
+.formField > label {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.425rem;
+}
+
+.formField > input {
+  background-color: #393f44;
+  border: 1px solid rgb(155, 164, 190);
+  padding: 0.625rem 0.825rem;
+  font-size: 1.125rem;
+  color: var(--txtWhite);
+  border-radius: 0.625rem;
+  outline: none;
+}
+
+.formField > select {
+  background-color: #393f44;
+  border: 1px solid rgb(155, 164, 190);
+  padding: 0.625rem 0.825rem;
+  font-size: 1.125rem;
+  color: var(--txtWhite);
+  border-radius: 0.625rem;
+  outline: none;
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.formSubmit {
+  width: 100%;
+}
+
+.submit {
+  text-transform: uppercase;
+  width: 100%;
+  color: #fff;
+  background-color: rgb(82, 124, 179);
+  padding: 0.8125rem;
+  font-size: large;
+  font-family: "Montserrat";
+  font-weight: 700;
+  border-radius: 0.8125rem;
+  outline: none;
+  border: 1px solid rgba(46, 109, 138, 0.678);
+  cursor: pointer;
+}
