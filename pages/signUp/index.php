@@ -5,11 +5,13 @@
 include '../../UI/header.php';
 include '../../application_top.php';
 include '../../utils/randomizer.php';
+include '../../utils/Encryption.php';
+use utils\Encryption;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $username = $_POST['username'];
-  $email = $_POST['email'];
-  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  $username = mysqli_real_escape_string($con,$_POST['username']);
+  $email = mysqli_real_escape_string($con, $_POST['email']) ;
+  $password = mysqli_real_escape_string($con,$_POST['password']);
 
   if (!empty($username) && !empty($password) && !empty($email) && !is_numeric($username)) {
     $check_email_exists = "select * from users where email = '$email' limit 1";
@@ -22,9 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       die;
     }
 
-
+    $encryptor = new Encryption($password);
+    $encryptor->encrypt();
     $user_id = random_num(20);
-    $query = "insert into users (user_id, username, email, password) values ('$user_id','$username', '$email','$password')";
+    $query = "insert into users (user_id, username, email, password) values ('$user_id','$username', '$email','$encryptor->password')";
     mysqli_query($con, $query);
     echo "<script>
         alert('Success');
